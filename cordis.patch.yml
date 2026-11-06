@@ -1,0 +1,7 @@
+# dsh-page-translator bundle layer: one host row that owns the loopback HTTP
+# translation service. The port is chosen at load time (0 = OS-assigned) unless
+# the profile overrides `config.port`; the chosen origin is logged and exposed
+# through the client panel, which reads it from the host state route.
+- insert:
+    - id: dsh-page-translator
+      name: '@local/dsh-page-translator'

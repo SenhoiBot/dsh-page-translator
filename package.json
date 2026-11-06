@@ -1,0 +1,46 @@
+{
+  "name": "@local/dsh-page-translator",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "In-place page translator for DeepSeek Harness: built-in sidebar browser (webview) and an Edge/Chrome MV3 extension, with tone-aware Chinese->English reply composer and auto-follow for SPA/infinite-scroll pages.",
+  "author": "SenhoiBot <senhoi@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SenhoiBot/dsh-page-translator.git"
+  },
+  "homepage": "https://github.com/SenhoiBot/dsh-page-translator#readme",
+  "bugs": {
+    "url": "https://github.com/SenhoiBot/dsh-page-translator/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "translation",
+    "edge-extension"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "edge-extension",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "DSH 整页翻译 (DeepSeek Harness)",
+  "version": "0.2.3",
+  "description": "在 Edge 里使用 DeepSeek Harness 的整页翻译，并在「译」右侧输入中文、选语气、得到地道而自然的英文社区回复；Reddit 等 SPA 页面新内容会持续自动翻译。",
+  "permissions": ["storage"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "DSH 整页翻译",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["page-script-hosted.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
